@@ -7,10 +7,9 @@ import { useState } from "react";
 
 function App() {
 	const [light, setLight] = useState(false);
-	const dark = light ? " " : "dark";
-
-	const switchLight = () => {
-		setLight((prevState) => !prevState);
+	const dark = light ? "" : "dark";
+	const clickHandler = () => {
+		setLight((prev) => !prev);
 	};
 
 	return (
@@ -19,7 +18,7 @@ function App() {
 			<section>
 				<AngryButton />
 				<CounterButton />
-				<LightSwitchButton light={light} handleClick={switchLight} />
+				<LightSwitchButton handleClick={clickHandler} light={light} />
 				<TextRepeaterButton />
 			</section>
 		</div>
